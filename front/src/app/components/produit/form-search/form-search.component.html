@@ -1,0 +1,32 @@
+<!-- <p>form-search works!</p> -->
+
+<div class="w-full h-full flex justify-center items-center ">
+    <form class="w-[70%] h-[90%] flex justify-evenly items-center flex-col" #searchProduct="ngForm" (ngSubmit)="submite(searchProduct.value)">
+        <div class=" flex w-[60%] h-[80%] justify-around items-center">
+            <label for="username-success" class="block text-sm font-medium text-secondary">Rechercher par</label>
+
+            <select id="countries" ngModel name="critere"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option *ngFor="let critere of critererechere" value="{{critere}}">{{critere}}</option>
+                
+            </select>
+
+            <input type="text" id="username-success" ngModel name="libelle"
+                class=" border text-sm rounded-lg border-secondary block w-[40%] p-4 " >
+
+            <div>
+                <button type="submit"
+                [ngClass]="{'bg-gray-700' : searchProduct.invalid}" 
+                [disabled]="searchProduct.invalid" title="Remplir le champ pour deverouiller le bouton"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Search</button>
+            </div>
+
+            <!-- <p class="mt-2 text-sm text-green-600 dark:text-green-500"><span class="font-medium">Alright!</span>
+                    Username available!</p> -->
+        </div>
+        <div class="invalid-feeback">
+            <!-- dark:bg-green-100 dark:border-green-400 -->
+
+        </div>
+    </form>
+</div>

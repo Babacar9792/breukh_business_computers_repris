@@ -1,0 +1,21 @@
+<div class="absolute w-full h-full flex justify-center items-center z-50 " [ngClass]="{'hidden' : loader}">
+    <app-loader></app-loader>
+</div>
+<!-- <p>produit works!</p> -->
+<div class="w-full h-full flex flex-col justify-between items-center relative" [ngClass]="{'hidden' : !loader}">
+    <div class="w-full h-[15%] border-b-secondary border-2 ">
+        <app-form-search
+        (valueSearch)="searchProducts($event)"
+        ></app-form-search>
+    </div>
+    <div class="w-full h-[80%] ">
+        <app-list-produit 
+        [links]="links" 
+        [produits]="produits"
+        (page)="otherPage($event)"
+        (perPageTosend)="perPage($event)"
+        
+        ></app-list-produit>
+    </div>
+
+</div>

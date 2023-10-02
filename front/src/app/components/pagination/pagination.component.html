@@ -1,0 +1,10 @@
+<nav aria-label="Page navigation example">
+    <ul class="inline-flex -space-x-px text-base h-10">
+        
+        <li *ngFor="let link of links" >
+            <a aria-current="page"  [ngClass]="{'active' : link.active}" (click)="otherPage(link)"
+                class="flex items-center justify-center px-4 h-10 border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white" [innerHTML]="link.label"></a>
+        </li>
+        
+    </ul>
+</nav>
